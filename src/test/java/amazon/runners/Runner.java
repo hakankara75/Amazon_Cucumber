@@ -14,15 +14,16 @@ senaryoyu çalıştırabiliriz
 @CucumberOptions(  //plugin kismi raporlar icin
                 plugin = {
                         "pretty", //console renkli yazdirmak icin
-                        "html:target/default-cucumber-reports.html",
+                        "html:src/test/resources/features/htmlReport/cucumberHooks.html",
                         "json:target/json-reports/cucumber.json",
-                        "junit:target/xml-report/cucumber.xml"
-                },
+                        "junit:src/test/resources/features/htmlReport/cucumber.xml",
+                        "rerun:TestOutput/failed_scenario.txt",//rerun hata veren testleri kaydedip yeniden otomatik kosmak icin
+                        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//spark report icin
               //  monochrome = true, //console okunakli hale getirir, renksiz yapar
                 features = "src/test/resources/features",
-                 glue = {"amazon/stepDefinitions"},//Bu parametre ile kodlarımızı yazdığımız stepDefinition
+                 glue = {"techproed/stepDefinitions"},//Bu parametre ile kodlarımızı yazdığımız stepDefinition
                                                      //class'ının packege'ını belirtiriz
-                 tags = "@AmazonGiris",
+                 tags = "@techpro3",
                  dryRun = false                               )
 /*
 features ===> features'ların olduğu packega'ın yolunu ver(ContentRoot)
