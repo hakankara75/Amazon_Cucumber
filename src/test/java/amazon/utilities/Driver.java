@@ -48,6 +48,7 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     //bu secenekte chrome acilmadan test kosulur
+                    break;
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
